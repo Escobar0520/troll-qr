@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>😈</title>
+</head>
+<body style="text-align:center; background:black; color:white;">
+
+<h1>😂 Te la creíste</h1>
+
+<img src="https://i.imgur.com/Z6XGQ0Q.gif" width="300">
+
+<p id="contador"></p>
+
+<script>
+fetch('https://api.countapi.xyz/hit/Escobar/trollqr')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("contador").innerText =
+      "Personas trolleadas: " + data.value;
+  });
+</script>
+
+</body>
+</html>
