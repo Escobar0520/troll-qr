@@ -12,4 +12,26 @@
 <img src="https://hitwebcounter.com/counter/counter.php?page=21484358&style=0030&nbdigits=5&type=page&initCount=0" style="display:none;">
   
 </body>
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBxHZBIBaM-kQeeEZOLnK1pWyaUc7hH2k4",
+  authDomain: "contador-qr-a1844.firebaseapp.com",
+  projectId: "contador-qr-a1844",
+  storageBucket: "contador-qr-a1844.firebasestorage.app",
+  messagingSenderId: "81206353092",
+  appId: "1:81206353092:web:02e960042fb7c1ecc9bd91"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const ref = doc(db, "visitas", "contador");
+
+updateDoc(ref, {
+  total: increment(1)
+});
+</script>
 </html>
